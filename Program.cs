@@ -28,7 +28,7 @@ namespace TextEditor
         }
 
         static void OpenArq(){
-
+            Console.ReadLine();
         }
 
         static void Edit(){
