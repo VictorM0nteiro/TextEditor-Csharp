@@ -32,7 +32,7 @@ namespace TextEditor
 
 
 
-            Menu();
+            //Menu();
         }
 
         static void Edit(){
@@ -41,12 +41,15 @@ namespace TextEditor
             Console.WriteLine("-------------------");
 
             string text = "";
-            while(Console.ReadKey().Key != ConsoleKey.Escape){ // enquanto a tecla for diferente de esc continuará o laço de repetição
-                
-            }
+            do{
+                text += Console.ReadLine();
+                text += Environment.NewLine; // quebrando a linha no final de cada leitura
+            }while(Console.ReadKey().Key != ConsoleKey.Escape); // enquanto a tecla for diferente de esc continuará o laço de repetição
+
+            Console.Write(text);
 
 
-            Menu();
+            //Menu();
         }
     }
 }
