@@ -28,11 +28,25 @@ namespace TextEditor
         }
 
         static void OpenArq(){
-            Console.ReadLine();
+
+
+
+
+            Menu();
         }
 
         static void Edit(){
+            Console.Clear();
+            Console.WriteLine("Digite seu texto abaixo (ESC para sair)");
+            Console.WriteLine("-------------------");
 
+            string text = "";
+            while(Console.ReadKey().Key != ConsoleKey.Escape){ // enquanto a tecla for diferente de esc continuará o laço de repetição
+                
+            }
+
+
+            Menu();
         }
     }
 }
