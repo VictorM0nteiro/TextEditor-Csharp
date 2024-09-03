@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace TextEditor
 {
@@ -21,13 +22,13 @@ namespace TextEditor
 
             switch(option){
                 case 0: System.Environment.Exit(0); break;
-                case 1: OpenArq(); break;
+                case 1: OpenFile(); break;
                 case 2: Edit(); break;
                 default: Menu(); break;
             }
         }
 
-        static void OpenArq(){
+        static void OpenFile(){
 
 
 
@@ -50,6 +51,18 @@ namespace TextEditor
 
 
             //Menu();
+        }
+
+        static void save(string text)
+        {
+            Console.Clear();
+            Console.WriteLine("Qual caminho para salvar o arquivo");
+            var path = Console.ReadLine();
+
+            using(var file = new StreamWriter(path)) //Cria uma nova instância de StreamWriter e a associa ao arquivo especificado pelo caminho path.
+            {
+                file.Write(text); //tudo o que precisa para salvar o arquivo
+            }
         }
     }
 }
