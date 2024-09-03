@@ -47,13 +47,14 @@ namespace TextEditor
                 text += Environment.NewLine; // quebrando a linha no final de cada leitura
             }while(Console.ReadKey().Key != ConsoleKey.Escape); // enquanto a tecla for diferente de esc continuará o laço de repetição
 
-            Console.Write(text);
+            //Console.Write(text);
 
+            Save(text);
 
             //Menu();
         }
 
-        static void save(string text)
+        static void Save(string text)
         {
             Console.Clear();
             Console.WriteLine("Qual caminho para salvar o arquivo");
@@ -63,6 +64,10 @@ namespace TextEditor
             {
                 file.Write(text); //tudo o que precisa para salvar o arquivo
             }
+
+            Console.WriteLine($"Arquivo {path} salvo com sucesso!");
+            Console.ReadLine();
+            Menu();
         }
     }
 }
