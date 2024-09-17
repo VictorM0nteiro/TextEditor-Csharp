@@ -29,11 +29,17 @@ namespace TextEditor
         }
 
         static void OpenFile(){
+            Console.Clear();
+            Console.WriteLine("Qual o caminho do arquivo?");
+            string path = Console.ReadLine();
 
-
-
-
-            //Menu();
+            using(var file = new StreamReader(path)){
+                string text = file.ReadToEnd();
+                Console.WriteLine(text);
+            }
+            Console.WriteLine("");
+            Console.ReadLine();
+            Menu();
         }
 
         static void Edit(){
